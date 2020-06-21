@@ -1,2 +1,13 @@
-# IAR Embedded Workbench workspace
+### IAR Embedded Workbench ##
+
+# Workspace
 SAME70-XPLD/Workspace/
+
+# Project settings
+SAME70-XPLD/adc_buffer/settings/
+
+# Debugger settings
+*.ewd
+
+# Dependency information
+*.dep
