@@ -49,7 +49,7 @@
 
     <linkerFile>
 		<override>True</override>
-		<path>$PROJ_DIR$\same70b\iar\config\linker\Microchip\atsame70q21b\sram.icf</path>
+		<path>$PROJ_DIR$\same70b\iar\config\linker\Microchip\atsame70q21b\flash.icf</path>
     </linkerFile>
 
     <files>
