@@ -1,4 +1,4 @@
-### IAR Embedded Workbench ##
+### IAR Embedded Workbench ###
 
 # Workspace
 SAME70-XPLD/Workspace/
@@ -18,3 +18,9 @@ SAME70-XPLD/adc_buffer/settings/
 # Debug and Release files
 SAME70-XPLD/adc_buffer/Debug/
 SAME70-XPLD/adc_buffer/Release/
+
+
+### Raspberry Pi ###
+
+# Excecutable output files
+Raspberry Pi/output/
