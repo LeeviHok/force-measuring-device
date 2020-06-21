@@ -60,6 +60,13 @@
             <path>driver_init.c</path>
             <path>driver_init.h</path>
             <path>main.c</path>
+
+            <path>adc.c</path>
+            <path>adc.h</path>
+            <path>spi.c</path>
+            <path>spi.h</path>
+            <path>xdmac.c</path>
+            <path>xdmac.h</path>
     
 
         <group name="CMSIS/Core/Include">
