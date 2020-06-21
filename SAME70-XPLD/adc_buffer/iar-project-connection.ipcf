@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iarProjectConnection name="src" oneShot="false">
     <device>
-        <name>ATSAME70Q21B</name>
+        <name>ATSAME70Q21xB</name>
     </device>
 
     <includePath>

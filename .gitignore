@@ -11,3 +11,7 @@ SAME70-XPLD/adc_buffer/settings/
 
 # Dependency information
 *.dep
+
+# Debug and Release files
+SAME70-XPLD/adc_buffer/Debug/
+SAME70-XPLD/adc_buffer/Release/
