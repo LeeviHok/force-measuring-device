@@ -32,11 +32,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -44,7 +44,7 @@
                 </option>
                 <option>
                     <name>OGCoreOrChip</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
@@ -58,7 +58,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state></state>
+                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state></state>
+                    <state>8.50.1.24770</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -78,7 +78,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state></state>
+                    <state>ATSAME70Q21xB	Microchip ATSAME70Q21xB</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GEndianModeBE</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OGBufferedTerminalOutput</name>
@@ -112,12 +112,12 @@
                 </option>
                 <option>
                     <name>RTConfigPath2</name>
-                    <state></state>
+                    <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
                     <version>28</version>
-                    <state>38</state>
+                    <state>41</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
@@ -134,21 +134,21 @@
                 <option>
                     <name>CoreVariant</name>
                     <version>28</version>
-                    <state>38</state>
+                    <state>41</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>-</state>
+                    <state>ATSAME70Q21xB	Microchip ATSAME70Q21xB</state>
                 </option>
                 <option>
                     <name>FPU2</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>7</state>
                 </option>
                 <option>
                     <name>NrRegs</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>NEON</name>
@@ -157,7 +157,7 @@
                 <option>
                     <name>GFPUCoreSlave2</name>
                     <version>28</version>
-                    <state>38</state>
+                    <state>41</state>
                 </option>
                 <option>
                     <name>OGCMSISPackSelectDevice</name>
@@ -198,7 +198,7 @@
                 </option>
                 <option>
                     <name>DSPExtension</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>TrustZone</name>
@@ -220,7 +220,8 @@
                 <debug>1</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>__SAME70Q21B__</state>
+                    <state>F_CPU=300000000</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -329,7 +330,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -345,7 +346,20 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\config</state>
+                    <state>$PROJ_DIR$\examples</state>
+                    <state>$PROJ_DIR$\hal\include</state>
+                    <state>$PROJ_DIR$\hal\utils\include</state>
+                    <state>$PROJ_DIR$\hpl\core</state>
+                    <state>$PROJ_DIR$\hpl\pio</state>
+                    <state>$PROJ_DIR$\hpl\pmc</state>
+                    <state>$PROJ_DIR$\hpl\spi</state>
+                    <state>$PROJ_DIR$\hpl\xdmac</state>
+                    <state>$PROJ_DIR$\hri</state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\CMSIS\Core\Include</state>
+                    <state>$PROJ_DIR$\same70b\include</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -527,7 +541,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>__SAME70Q21B__</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -619,7 +633,20 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\config</state>
+                    <state>$PROJ_DIR$\examples</state>
+                    <state>$PROJ_DIR$\hal\include</state>
+                    <state>$PROJ_DIR$\hal\utils\include</state>
+                    <state>$PROJ_DIR$\hpl\core</state>
+                    <state>$PROJ_DIR$\hpl\pio</state>
+                    <state>$PROJ_DIR$\hpl\pmc</state>
+                    <state>$PROJ_DIR$\hpl\spi</state>
+                    <state>$PROJ_DIR$\hpl\xdmac</state>
+                    <state>$PROJ_DIR$\hri</state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\CMSIS\Core\Include</state>
+                    <state>$PROJ_DIR$\same70b\include</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -708,7 +735,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>###Unitialized###</state>
+                    <state>adc_buffer.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -768,11 +795,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>lnk0t.icf</state>
+                    <state>$PROJ_DIR$\same70b\iar\config\linker\Microchip\atsame70q21b\flash.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1099,7 +1126,7 @@
                 </option>
                 <option>
                     <name>OGCoreOrChip</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
@@ -1121,7 +1148,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state></state>
+                    <state>8.50.1.24770</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -1133,7 +1160,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state></state>
+                    <state>ATSAME70Q21xB	Microchip ATSAME70Q21xB</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -1167,7 +1194,7 @@
                 </option>
                 <option>
                     <name>RTConfigPath2</name>
-                    <state></state>
+                    <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
@@ -1189,21 +1216,21 @@
                 <option>
                     <name>CoreVariant</name>
                     <version>28</version>
-                    <state>38</state>
+                    <state>41</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>-</state>
+                    <state>ATSAME70Q21xB	Microchip ATSAME70Q21xB</state>
                 </option>
                 <option>
                     <name>FPU2</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>7</state>
                 </option>
                 <option>
                     <name>NrRegs</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>NEON</name>
@@ -1212,7 +1239,7 @@
                 <option>
                     <name>GFPUCoreSlave2</name>
                     <version>28</version>
-                    <state>38</state>
+                    <state>41</state>
                 </option>
                 <option>
                     <name>OGCMSISPackSelectDevice</name>
@@ -1253,7 +1280,7 @@
                 </option>
                 <option>
                     <name>DSPExtension</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>TrustZone</name>
@@ -1276,6 +1303,8 @@
                 <option>
                     <name>CCDefines</name>
                     <state>NDEBUG</state>
+                    <state>__SAME70Q21B__</state>
+                    <state>F_CPU=300000000</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -1384,7 +1413,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -1400,7 +1429,20 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\config</state>
+                    <state>$PROJ_DIR$\examples</state>
+                    <state>$PROJ_DIR$\hal\include</state>
+                    <state>$PROJ_DIR$\hal\utils\include</state>
+                    <state>$PROJ_DIR$\hpl\core</state>
+                    <state>$PROJ_DIR$\hpl\pio</state>
+                    <state>$PROJ_DIR$\hpl\pmc</state>
+                    <state>$PROJ_DIR$\hpl\spi</state>
+                    <state>$PROJ_DIR$\hpl\xdmac</state>
+                    <state>$PROJ_DIR$\hri</state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\CMSIS\Core\Include</state>
+                    <state>$PROJ_DIR$\same70b\include</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1425,7 +1467,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules98</name>
@@ -1582,7 +1624,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>__SAME70Q21B__</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -1674,7 +1716,20 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\config</state>
+                    <state>$PROJ_DIR$\examples</state>
+                    <state>$PROJ_DIR$\hal\include</state>
+                    <state>$PROJ_DIR$\hal\utils\include</state>
+                    <state>$PROJ_DIR$\hpl\core</state>
+                    <state>$PROJ_DIR$\hpl\pio</state>
+                    <state>$PROJ_DIR$\hpl\pmc</state>
+                    <state>$PROJ_DIR$\hpl\spi</state>
+                    <state>$PROJ_DIR$\hpl\xdmac</state>
+                    <state>$PROJ_DIR$\hri</state>
+                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\CMSIS\Core\Include</state>
+                    <state>$PROJ_DIR$\same70b\include</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -1763,7 +1818,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>###Unitialized###</state>
+                    <state>adc_buffer.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -1823,11 +1878,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>lnk0t.icf</state>
+                    <state>$PROJ_DIR$\same70b\iar\config\linker\Microchip\atsame70q21b\flash.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2111,4 +2166,850 @@
             <data />
         </settings>
     </configuration>
+    <group>
+        <name>src</name>
+        <group>
+            <name>CMSIS</name>
+            <group>
+                <name>Core</name>
+                <group>
+                    <name>Include</name>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_armcc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_armclang.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_compiler.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_gcc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\cmsis_version.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_armv8mbl.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_armv8mml.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm0plus.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm23.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm3.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm33.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm4.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_cm7.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_sc000.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\core_sc300.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\mpu_armv7.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\mpu_armv8.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\CMSIS\Core\Include\tz_context.h</name>
+                    </file>
+                </group>
+            </group>
+        </group>
+        <group>
+            <name>config</name>
+            <file>
+                <name>$PROJ_DIR$\config\hpl_pmc_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\config\hpl_spi_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\config\hpl_xdmac_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\config\peripheral_clk_config.h</name>
+            </file>
+        </group>
+        <group>
+            <name>examples</name>
+            <file>
+                <name>$PROJ_DIR$\examples\driver_examples.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\examples\driver_examples.h</name>
+            </file>
+        </group>
+        <group>
+            <name>hal</name>
+            <group>
+                <name>include</name>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_atomic.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_delay.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_gpio.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_init.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_io.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_sleep.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hal_spi_s_async.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_core.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_delay.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_dma.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_ext_irq.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_gpio.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_init.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_irq.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_missing_features.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_reset.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_sleep.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_async.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_dma.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_m_async.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_m_dma.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_m_sync.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_s_async.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_s_sync.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\include\hpl_spi_sync.h</name>
+                </file>
+            </group>
+            <group>
+                <name>src</name>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_atomic.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_delay.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_gpio.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_init.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_io.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_sleep.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hal\src\hal_spi_s_async.c</name>
+                </file>
+            </group>
+            <group>
+                <name>utils</name>
+                <group>
+                    <name>include</name>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\compiler.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\err_codes.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\events.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\parts.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_assert.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_event.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_increment_macro.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_list.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_repeat_macro.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\include\utils_ringbuffer.h</name>
+                    </file>
+                </group>
+                <group>
+                    <name>src</name>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\src\utils_assert.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\src\utils_event.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\src\utils_list.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\hal\utils\src\utils_ringbuffer.c</name>
+                    </file>
+                </group>
+            </group>
+        </group>
+        <group>
+            <name>hpl</name>
+            <group>
+                <name>core</name>
+                <file>
+                    <name>$PROJ_DIR$\hpl\core\hpl_core_m7_base.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hpl\core\hpl_core_port.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hpl\core\hpl_init.c</name>
+                </file>
+            </group>
+            <group>
+                <name>pio</name>
+                <file>
+                    <name>$PROJ_DIR$\hpl\pio\hpl_gpio_base.h</name>
+                </file>
+            </group>
+            <group>
+                <name>pmc</name>
+                <file>
+                    <name>$PROJ_DIR$\hpl\pmc\hpl_pmc.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hpl\pmc\hpl_pmc.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hpl\pmc\hpl_sleep.c</name>
+                </file>
+            </group>
+            <group>
+                <name>spi</name>
+                <file>
+                    <name>$PROJ_DIR$\hpl\spi\hpl_spi.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\hpl\spi\hpl_spi_base.h</name>
+                </file>
+            </group>
+            <group>
+                <name>xdmac</name>
+                <file>
+                    <name>$PROJ_DIR$\hpl\xdmac\hpl_xdmac.c</name>
+                </file>
+            </group>
+        </group>
+        <group>
+            <name>hri</name>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_acc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_aes_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_afec_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_chipid_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_dacc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_efc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_gmac_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_gpbr_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_hsmci_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_i2sc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_icm_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_isi_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_lockbit_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_matrix_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_mcan_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_pio_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_pmc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_pwm_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_qspi_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_rstc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_rswdt_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_rtc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_rtt_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_sdramc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_smc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_spi_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_ssc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_supc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_tc_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_trng_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_twihs_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_uart_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_usart_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_usbhs_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_utmi_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_wdt_e70b.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\hri\hri_xdmac_e70b.h</name>
+            </file>
+        </group>
+        <group>
+            <name>same70b</name>
+            <group>
+                <name>iar</name>
+                <group>
+                    <name>iar</name>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\iar\iar\startup_same70q21b.c</name>
+                    </file>
+                </group>
+                <file>
+                    <name>$PROJ_DIR$\same70b\iar\system_same70q21b.c</name>
+                </file>
+            </group>
+            <group>
+                <name>include</name>
+                <group>
+                    <name>component</name>
+                    <group>
+                        <name>deprecated</name>
+                        <file>
+                            <name>$PROJ_DIR$\same70b\include\component\deprecated\tc.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\same70b\include\component\deprecated\template.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\same70b\include\component\deprecated\usart.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\same70b\include\component\deprecated\usbhs.h</name>
+                        </file>
+                    </group>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\acc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\aes.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\afec.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\chipid.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\dacc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\efc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\gmac.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\gpbr.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\hsmci.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\i2sc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\icm.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\isi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\matrix.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\mcan.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\pio.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\pmc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\pwm.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\qspi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\rstc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\rswdt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\rtc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\rtt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\sdramc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\smc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\spi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\ssc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\supc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\tc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\trng.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\twihs.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\uart.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\usart.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\usbhs.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\utmi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\wdt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\component\xdmac.h</name>
+                    </file>
+                </group>
+                <group>
+                    <name>instance</name>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\acc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\aes.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\afec0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\afec1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\chipid.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\dacc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\efc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\gmac.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\gpbr.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\hsmci.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\i2sc0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\i2sc1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\icm.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\isi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\matrix.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\mcan0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\mcan1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pioa.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\piob.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pioc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\piod.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pioe.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pmc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pwm0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\pwm1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\qspi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\rstc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\rswdt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\rtc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\rtt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\sdramc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\smc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\spi0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\spi1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\ssc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\supc.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\tc0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\tc1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\tc2.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\tc3.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\trng.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\twihs0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\twihs1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\twihs2.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\uart0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\uart1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\uart2.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\uart3.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\uart4.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\usart0.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\usart1.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\usart2.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\usbhs.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\utmi.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\wdt.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\instance\xdmac.h</name>
+                    </file>
+                </group>
+                <group>
+                    <name>pio</name>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70j19b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70j20b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70j21b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70n19b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70n20b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70n21b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70q19b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70q20b.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\same70b\include\pio\same70q21b.h</name>
+                    </file>
+                </group>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\component-version.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\sam.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70j19b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70j20b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70j21b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70n19b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70n20b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70n21b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70q19b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70q20b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\same70q21b.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\same70b\include\system_same70.h</name>
+                </file>
+            </group>
+        </group>
+        <file>
+            <name>$PROJ_DIR$\adc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\adc.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\atmel_start.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\atmel_start.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\atmel_start_pins.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\driver_init.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\driver_init.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\spi.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\spi.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\xdmac.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\xdmac.h</name>
+        </file>
+    </group>
+    <file>
+        <name>$PROJ_DIR$\iar-project-connection.ipcf</name>
+    </file>
 </project>

@@ -310,32 +310,32 @@ static inline const struct spi_regs_cfg *_spi_get_regs(const uint32_t hw_addr)
  *  \brief IRQ handler used
  *  \param[in, out] p Pointer to SPI device instance
  */
-static void _spi_handler(struct _spi_async_dev *dev)
-{
-	void *            hw = dev->prvt;
-	hri_spi_imr_reg_t st;
-
-	st = hri_spi_read_IMR_reg(hw);
-	st &= hri_spi_read_SR_reg(hw);
-
-	if (st & SPI_SR_RDRF) {
-		dev->callbacks.rx(dev);
-	} else if (st & SPI_SR_TDRE) {
-		dev->callbacks.tx(dev);
-	} else if (st & SPI_SR_TXEMPTY) {
-		dev->callbacks.complete(dev);
-	} else if (st & (SPI_SR_OVRES | SPI_SR_NSSR | SPI_SR_MODF | SPI_SR_UNDES)) {
-		dev->callbacks.err(dev, ERR_OVERFLOW);
-	}
-}
+//static void _spi_handler(struct _spi_async_dev *dev)
+//{
+//	void *            hw = dev->prvt;
+//	hri_spi_imr_reg_t st;
+//
+//	st = hri_spi_read_IMR_reg(hw);
+//	st &= hri_spi_read_SR_reg(hw);
+//
+//	if (st & SPI_SR_RDRF) {
+//		dev->callbacks.rx(dev);
+//	} else if (st & SPI_SR_TDRE) {
+//		dev->callbacks.tx(dev);
+//	} else if (st & SPI_SR_TXEMPTY) {
+//		dev->callbacks.complete(dev);
+//	} else if (st & (SPI_SR_OVRES | SPI_SR_NSSR | SPI_SR_MODF | SPI_SR_UNDES)) {
+//		dev->callbacks.err(dev, ERR_OVERFLOW);
+//	}
+//}
 
 /**
  * \internal SPI interrupt handler
  */
-void SPI0_Handler(void)
-{
-	_spi_handler(_spi0_dev);
-}
+//void SPI0_Handler(void)
+//{
+//	_spi_handler(_spi0_dev);
+//}
 
 int32_t _spi_spi_m_sync_init(struct _spi_m_sync_dev *dev, void *const hw)
 {

@@ -193,35 +193,35 @@ void _dma_set_irq_state(const uint8_t channel, const enum _dma_callback_type typ
 /**
  * \internal XDMAC interrupt handler
  */
-void XDMAC_Handler(void)
-{
-	uint32_t              status;
-	struct _dma_resource *tmp_resource;
-	int8_t                channel = -1;
-	uint32_t              pend;
-
-	pend = hri_xdmac_read_GIS_reg(XDMAC);
-
-	/* Get the first pending channel ID */
-	for (uint8_t i = 0; i < DMAC_CH_NUM; i++) {
-		if ((pend >> i) & 1) {
-			channel = i;
-			break;
-		}
-	}
-
-	if (channel < 0) {
-		return;
-	}
-
-	tmp_resource = &_resources[channel];
-	status       = hri_xdmac_read_CIS_reg(XDMAC, channel);
-
-	if (status & (XDMAC_CIS_RBEIS | XDMAC_CIS_WBEIS | XDMAC_CIS_ROIS)) {
-		tmp_resource->dma_cb.error(tmp_resource);
-	} else if (status & XDMAC_CIS_BIS) {
-		tmp_resource->dma_cb.transfer_done(tmp_resource);
-	}
-}
+//void XDMAC_Handler(void)
+//{
+//	uint32_t              status;
+//	struct _dma_resource *tmp_resource;
+//	int8_t                channel = -1;
+//	uint32_t              pend;
+//
+//	pend = hri_xdmac_read_GIS_reg(XDMAC);
+//
+//	/* Get the first pending channel ID */
+//	for (uint8_t i = 0; i < DMAC_CH_NUM; i++) {
+//		if ((pend >> i) & 1) {
+//			channel = i;
+//			break;
+//		}
+//	}
+//
+//	if (channel < 0) {
+//		return;
+//	}
+//
+//	tmp_resource = &_resources[channel];
+//	status       = hri_xdmac_read_CIS_reg(XDMAC, channel);
+//
+//	if (status & (XDMAC_CIS_RBEIS | XDMAC_CIS_WBEIS | XDMAC_CIS_ROIS)) {
+//		tmp_resource->dma_cb.error(tmp_resource);
+//	} else if (status & XDMAC_CIS_BIS) {
+//		tmp_resource->dma_cb.transfer_done(tmp_resource);
+//	}
+//}
 
 #endif /* CONF_DMA_ENABLE */

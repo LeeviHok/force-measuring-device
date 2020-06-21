@@ -6,8 +6,11 @@ SAME70-XPLD/Workspace/
 # Project settings
 SAME70-XPLD/adc_buffer/settings/
 
-# Debugger settings
+# Project settings for C-SPY
 *.ewd
+
+# Project settings for C-STAT and C-RUN
+*.ewt
 
 # Dependency information
 *.dep
