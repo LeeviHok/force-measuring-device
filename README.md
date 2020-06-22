@@ -15,7 +15,7 @@ Force measuring device is project where force sensor, ADC, real-time MCU and Ras
 | LCD touch screen | Joy-IT                  | RB-LCD-7-2      |
 
 ### Force sensor
-Force sensor is typical resistive wheatstone bridge sensor rated for 100 Newtons. It outputs differential signal with rated sensitivity of 2 mV/V on top of common mode voltage, which is half of the excitation voltage. It has 6-wire configuration, but sense wires cannot be used because ADC does not have external reference voltage pins.
+Force sensor is typical resistive wheatstone bridge sensor rated for 100 newtons. It outputs differential signal with rated sensitivity of 2 mV/V on top of common mode voltage, which is half of the excitation voltage. It has 6-wire configuration, but sense wires cannot be used because ADC does not have external reference voltage pins.
 
 ### ADC
 ADC has differential inputs and on-chip amplifier, so it can be used directly to read force sensor. Amplifier has selectable gain, with options of 32, 64 and 128. ADC features also on-board analog supply regulator, which is used with few external components to create excitation voltage for force sensor.
@@ -29,6 +29,6 @@ Raspberry Pi is used to run graphical user interface, which displays measured fo
 ### LCD touch screen
 This device has built-in 7" LCD touch screen with resolution of 1024 x 600 pixels. This way external keyboard and mouse are not necessary, altough bit more convinient. It makes this also truly embedded system, which does not need any external devices to operate.
 
-## Internal view from the device
+## Internal view of the device
 
 ![Image from inside of the device](Images/Force_measuring_device_inside_w_sensor.jpg)
