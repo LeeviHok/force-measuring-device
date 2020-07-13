@@ -10,46 +10,38 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define adc_w_pipe	a_adc_w_pipe[1]
-#define adc_w_close	a_adc_w_pipe[0]
-#define adc_r_pipe	a_adc_r_pipe[0]
-#define adc_r_close	a_adc_r_pipe[1]
+#define main_to_adc_write	main_to_adc[1]
+#define main_to_adc_read	main_to_adc[0]
+#define adc_to_main_write	adc_to_main[1]
+#define adc_to_main_read	adc_to_main[0]
 
-#define gui_w_pipe	a_gui_w_pipe[1]
-#define gui_w_close	a_gui_w_pipe[0]
-#define gui_r_pipe	a_gui_r_pipe[0]
-#define gui_r_close	a_gui_r_pipe[1]
+#define main_to_gui_write	main_to_gui[1]
+#define main_to_gui_read	main_to_gui[0]
+#define gui_to_main_write	gui_to_main[1]
+#define gui_to_main_read	gui_to_main[0]
 
 
 int main(int argc, char *argv[]) {
 	/* Create pipes to communicate with ADC and GUI processes */
-	int a_adc_w_pipe[2], a_adc_r_pipe[2], a_gui_w_pipe[2], a_gui_r_pipe[2];
+	int main_to_adc[2];
+	int main_to_gui[2];
+	int adc_to_main[2];
+	int gui_to_main[2];
 
-	if(pipe(a_adc_w_pipe) == -1) {
-		printf("Failed to create ADC write pipe, closing program.\n");
-		exit(-1);
-	}
-	if(pipe(a_adc_r_pipe) == -1) {
-		close(adc_w_pipe);
-		close(adc_w_close);
-		printf("Failed to create ADC read pipe, closing program.\n");
-	}
-	if(pipe(a_gui_w_pipe) == -1) {
-		close(adc_w_pipe);
-		close(adc_w_close);
-		close(adc_r_pipe);
-		close(adc_r_close);
-		printf("Failed to create GUI write pipe, closing program.\n");
-		exit(-1);
-	}
-	if(pipe(a_gui_r_pipe) == -1) {
-		close(adc_w_pipe);
-		close(adc_w_close);
-		close(adc_r_pipe);
-		close(adc_r_close);
-		close(gui_w_pipe);
-		close(gui_w_close);
-		printf("Failed to create GUI read pipe, closing program.\n");
+	if(pipe(main_to_adc) == -1 ||
+	   pipe(main_to_gui) == -1 ||
+	   pipe(adc_to_main) == -1 ||
+	   pipe(gui_to_main) == -1)
+	{
+		close(main_to_adc_write);
+		close(main_to_adc_read);
+		close(adc_to_main_write);
+		close(adc_to_main_read);
+		close(main_to_gui_write);
+		close(main_to_gui_read);
+		close(gui_to_main_write);
+		close(gui_to_main_read);
+		printf("Failed to create some of the pipes, closing program.\n");
 		exit(-1);
 	}
 
@@ -63,28 +55,26 @@ int main(int argc, char *argv[]) {
 	}
 	/* ADC child */
 	else if(adc_pid == 0) {
-		char s_adc_w_pipe[20];	// Array to store ADC write pipe file descriptor as a string
-		char s_adc_w_close[20];	// Array to store pipe file descriptor, to be closed on child end
-		char s_adc_r_pipe[20];	// Array to store ADC read pipe file descriptor as a string
-		char s_adc_r_close[20];	// Array to store pipe file descriptor, to be closed on child end
+		close(main_to_adc_write);		// Close main write pipe end from child
+		close(adc_to_main_read);		// Close main read pipe end from child
+		char s_adc_to_main_write[20];	// Array to store ADC write pipe file descriptor as a string
+		char s_main_to_adc_read[20];	// Array to store ADC read pipe file escriptor as a string
 
-		if(sprintf(s_adc_w_pipe, "%d", adc_w_pipe) < 0 ||
-		   sprintf(s_adc_r_pipe, "%d", adc_r_pipe) < 0 ||
-		   sprintf(s_adc_w_close, "%d", adc_w_close) < 0 ||
-		   sprintf(s_adc_r_close, "%d", adc_r_close) < 0)
+		if(sprintf(s_adc_to_main_write, "%d", adc_to_main_write) < 0 ||
+		   sprintf(s_main_to_adc_read, "%d", main_to_adc_read) < 0)
 		{
 			printf("Failed to convert one of the ADC pipe file descriptors to string, closing program.\n");
 			exit(-1);
 		}
 
-		char *argv_adc[] = { "./adc", s_adc_w_pipe, s_adc_w_close, s_adc_r_pipe, s_adc_r_close, NULL };
+		char *argv_adc[] = { "./adc", s_adc_to_main_write, s_main_to_adc_read, NULL };
 		if(execv(argv_adc[0], argv_adc) == -1) {
 			printf("Failed to open ADC program, closing program.\n");
 			exit(-1);
 		}
 	}
-	close(adc_w_close);	// Close ADC write pipe read end from parent
-	close(adc_r_close);	// Close ADC read pipe write end from parent
+	close(adc_to_main_write);	// Close ADC write pipe end from parent
+	close(main_to_adc_read);	// Close ADC read pipe end from parent
 
 
 	/* Create process for GUI */
@@ -97,28 +87,26 @@ int main(int argc, char *argv[]) {
 	}
 	/* GUI child */
 	else if(gui_pid == 0) {
-		char s_gui_w_pipe[20];	// Array to store gui write pipe file descriptor as a string
-		char s_gui_w_close[20];	// Array to store gui write pipe file descriptor as a string
-		char s_gui_r_pipe[20];	// Array to store gui read pipe file descriptor as a string
-		char s_gui_r_close[20];	// Array to store gui read pipe file descriptor as a string
+		close(main_to_gui_write);		// Close main write pipe end from child
+		close(gui_to_main_read);		// Close main read pipe end from child
+		char s_gui_to_main_write[20];	// Array to store GUI write pipe file descriptor as a string
+		char s_main_to_gui_read[20];	// Array to store GUI read pipe file descriptor as a string
 
-		if(sprintf(s_gui_w_pipe, "%d", gui_w_pipe) < 0 ||
-		   sprintf(s_gui_r_pipe, "%d", gui_r_pipe) < 0 ||
-		   sprintf(s_gui_w_close, "%d", gui_w_close) < 0 ||
-		   sprintf(s_gui_r_close, "%d", gui_r_close) < 0)
+		if(sprintf(s_gui_to_main_write, "%d", gui_to_main_write) < 0 ||
+		   sprintf(s_main_to_gui_read, "%d", main_to_gui_read) < 0)
 		{
 			printf("Failed to convert one of the GUI pipe file descriptors to string, closing program.\n");
 			exit(-1);
 		}
 
-		char *argv_gui[] = {"./gui", s_gui_w_pipe, s_gui_w_close, s_gui_r_pipe, s_gui_r_close, NULL };
+		char *argv_gui[] = {"./gui", s_gui_to_main_write, s_main_to_gui_read, NULL };
 		if(execv(argv_gui[0], argv_gui) == -1) {
 			printf("Failed to open GUI program, closing program.\n");
 			exit(-1);
 		}
 	}
-	close(gui_w_close);	// Close GUI write pipe read end from parent
-	close(gui_r_close);	// Close GUI read pipe write end from parent
+	close(gui_to_main_write);	// Close GUI write pipe end from parent
+	close(main_to_gui_read);	// Close GUI read pipe end from parent
 
 
 	/* Move data from ADC process to GUI process */
@@ -126,9 +114,9 @@ int main(int argc, char *argv[]) {
 	float force;
 
 	while(1) {
-		byte_count = read(adc_r_pipe, &force, sizeof(force));
+		byte_count = read(adc_to_main_read, &force, sizeof(force));
 		if(byte_count > 0) {
-			write(gui_w_pipe, &force, byte_count);
+			write(main_to_gui_write, &force, byte_count);
 
 			static char buffer[100];						// For debugging
 			byte_count = sprintf(buffer, "%f\n", force);	//

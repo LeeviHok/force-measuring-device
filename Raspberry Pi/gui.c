@@ -16,10 +16,8 @@ int write_pipe, read_pipe;
 
 int main(int argc, char *argv[]) {
 	/* Initialize process */
-	write_pipe = strtol(argv[4], NULL, 10);
+	write_pipe = strtol(argv[1], NULL, 10);
 	read_pipe = strtol(argv[2], NULL, 10);
-	close(strtol(argv[1], NULL, 10));				// Close useless pipe ends
-	close(strtol(argv[3], NULL, 10));				//
 
 	int flags = fcntl(read_pipe, F_GETFL, 0);		// Set read_pipe to
 	fcntl(read_pipe, F_SETFL, flags | O_NONBLOCK);	// non-blocking mode
