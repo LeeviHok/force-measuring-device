@@ -31,74 +31,74 @@ int read_pipe, write_pipe;
 
 
 int main(int argc, char *argv[]) {
-	signal(SIGTERM, sigterm);
-	write_pipe = strtol(argv[1], NULL, 10);
-	read_pipe = strtol(argv[2], NULL, 10);
+    signal(SIGTERM, sigterm);
+    write_pipe = strtol(argv[1], NULL, 10);
+    read_pipe = strtol(argv[2], NULL, 10);
 
-	/* Setup GPIO pins */
-	wiringPiSetup();
-	pinMode(DRDY, INPUT);
-	pinMode(RESET, OUTPUT);
-	pullUpDnControl(DRDY, PUD_DOWN);
-	digitalWrite(RESET, LOW);
+    /* Setup GPIO pins */
+    wiringPiSetup();
+    pinMode(DRDY, INPUT);
+    pinMode(RESET, OUTPUT);
+    pullUpDnControl(DRDY, PUD_DOWN);
+    digitalWrite(RESET, LOW);
 
-	/* Wait 200 us for ADC circuitry to reset */
-	struct timespec req, rem;
-	req.tv_sec = 0;
-	req.tv_nsec = 200 * 1000;
-	nanosleep(&req , &rem);
+    /* Wait 200 us for ADC circuitry to reset */
+    struct timespec req, rem;
+    req.tv_sec = 0;
+    req.tv_nsec = 200 * 1000;
+    nanosleep(&req , &rem);
 
-	/* Setup Interrupts */
-	wiringPiISR(DRDY, INT_EDGE_RISING, &DRDY_handler);
+    /* Setup Interrupts */
+    wiringPiISR(DRDY, INT_EDGE_RISING, &DRDY_handler);
 
-	/* Setup SPI */
-	wiringPiSPISetup(0, 500000);
+    /* Setup SPI */
+    wiringPiSPISetup(0, 500000);
 
-	/* Enable ADC */
-	digitalWrite(RESET, HIGH);
+    /* Enable ADC */
+    digitalWrite(RESET, HIGH);
 
-	while(1) {
-		sleep(UINT_MAX);
-	}
+    while(1) {
+        sleep(UINT_MAX);
+    }
 }
 
 
 void sigterm() {
-	pinMode(DRDY, INPUT);
-	pinMode(RESET, INPUT);
-	pinMode(MOSI, INPUT);
-	pinMode(MISO, INPUT);
-	pinMode(SCLK, INPUT);
-	pinMode(CE0, INPUT);
-	pullUpDnControl(DRDY, PUD_OFF);
-	pullUpDnControl(RESET, PUD_OFF);
-	pullUpDnControl(MOSI, PUD_OFF);
-	pullUpDnControl(MISO, PUD_OFF);
-	pullUpDnControl(SCLK, PUD_OFF);
-	pullUpDnControl(CE0, PUD_OFF);
+    pinMode(DRDY, INPUT);
+    pinMode(RESET, INPUT);
+    pinMode(MOSI, INPUT);
+    pinMode(MISO, INPUT);
+    pinMode(SCLK, INPUT);
+    pinMode(CE0, INPUT);
+    pullUpDnControl(DRDY, PUD_OFF);
+    pullUpDnControl(RESET, PUD_OFF);
+    pullUpDnControl(MOSI, PUD_OFF);
+    pullUpDnControl(MISO, PUD_OFF);
+    pullUpDnControl(SCLK, PUD_OFF);
+    pullUpDnControl(CE0, PUD_OFF);
 
-	close(read_pipe);
-	close(write_pipe);
+    close(read_pipe);
+    close(write_pipe);
 
-	exit(1);
+    exit(1);
 }
 
 void DRDY_handler(void) {
-	static int32_t sample;
-	static float force;
+    static int32_t sample;
+    static float force;
 
-	sample = read_adc();
-	force = sample * NEWTON_PER_ADC_COUNT;
-	write(write_pipe, &force, sizeof(force));
+    sample = read_adc();
+    force = sample * NEWTON_PER_ADC_COUNT;
+    write(write_pipe, &force, sizeof(force));
 }
 
 int32_t read_adc(void) {
-	static uint8_t buffer[4];
-	static int32_t value;
-	value = 0;
+    static uint8_t buffer[4];
+    static int32_t value;
+    value = 0;
 
-	/* Data arrives LSB first */
-	wiringPiSPIDataRW(0, buffer, 4);
-	value |= (buffer[3] << 24) | (buffer[2] << 16) | (buffer[1] << 8) | buffer[0];
-	return value;
+    /* Data arrives LSB first */
+    wiringPiSPIDataRW(0, buffer, 4);
+    value |= (buffer[3] << 24) | (buffer[2] << 16) | (buffer[1] << 8) | buffer[0];
+    return value;
 }
