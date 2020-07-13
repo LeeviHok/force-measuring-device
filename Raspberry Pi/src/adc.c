@@ -31,7 +31,6 @@ int read_pipe, write_pipe;
 
 
 int main(int argc, char *argv[]) {
-	/* Process initialization */
 	signal(SIGTERM, sigterm);
 	write_pipe = strtol(argv[1], NULL, 10);
 	read_pipe = strtol(argv[2], NULL, 10);
