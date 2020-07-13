@@ -1,4 +1,4 @@
-output_dir = output
+output_dir = ../output
 
 all: main adc gui
 

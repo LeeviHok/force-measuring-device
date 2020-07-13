@@ -24,3 +24,6 @@ SAME70-XPLD/adc_buffer/Release/
 
 # Excecutable output files
 Raspberry Pi/output/
+
+# Python virtual environment
+Raspberry Pi/.venv/
